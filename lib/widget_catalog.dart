@@ -1,4 +1,5 @@
 
+import 'package:cookbook/widget/basics/appbar/appbar_page.dart';
 import 'package:flutter/material.dart';
 
 import 'model/widget_item.dart';
@@ -11,7 +12,7 @@ class WidgetCatalog extends StatelessWidget {
 		WidgetItem("Assets, Images, and Icons"),
 		WidgetItem("Async"),
 		WidgetItem("Basics"),
-		WidgetItem("Cpertino(iOS-style-widgets)"),
+		WidgetItem("Cupertino(iOS-style-widgets)"),
 		WidgetItem("Input"),
 		WidgetItem("Interaction Models"),
 		WidgetItem("Layout"),
@@ -33,7 +34,14 @@ class WidgetCatalog extends StatelessWidget {
 			children: List.generate(widgetList.length, (index) {
 				return Container(
 					padding: const EdgeInsets.all(8),
-					child: Text(widgetList[index].title),
+					child: GestureDetector(
+						child: Text(widgetList[index].title),
+						onTap: () {
+							print(widgetList[index].title);
+							Navigator.push(context, MaterialPageRoute(builder: (context) =>
+									MyStatelessWidget()));
+						},
+					),
 					color: Colors.teal[200],
 				);
 			}),
