@@ -23,7 +23,7 @@ void openPage(BuildContext context) {
 }
 
 /// This is the stateless widget that the main application instantiates.
-class MyStatelessWidget extends StatelessWidget {
+class AppbarPage extends StatelessWidget {
 
 	@override
 	Widget build(BuildContext context) {

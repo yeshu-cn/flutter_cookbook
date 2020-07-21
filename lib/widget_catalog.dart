@@ -1,5 +1,18 @@
 
-import 'package:cookbook/widget/basics/appbar/appbar_page.dart';
+import 'package:cookbook/widget/accessibility_pages.dart';
+import 'package:cookbook/widget/anim_motion_pages.dart';
+import 'package:cookbook/widget/assets_image_icon_pages.dart';
+import 'package:cookbook/widget/async_pages.dart';
+import 'package:cookbook/widget/basics_pages.dart';
+import 'package:cookbook/widget/cupertino_pages.dart';
+import 'package:cookbook/widget/input_pages.dart';
+import 'package:cookbook/widget/interaction_models_pages.dart';
+import 'package:cookbook/widget/layout_pages.dart';
+import 'package:cookbook/widget/material_components_pages.dart';
+import 'package:cookbook/widget/painting_effects_pages.dart';
+import 'package:cookbook/widget/scrolling_pages.dart';
+import 'package:cookbook/widget/styling_pages.dart';
+import 'package:cookbook/widget/text_pages.dart';
 import 'package:flutter/material.dart';
 
 import 'model/widget_item.dart';
@@ -7,20 +20,20 @@ import 'model/widget_item.dart';
 class WidgetCatalog extends StatelessWidget {
 
 	final widgetList = [
-		WidgetItem("Accessibility"),
-		WidgetItem("Animation and Motion"),
-		WidgetItem("Assets, Images, and Icons"),
-		WidgetItem("Async"),
-		WidgetItem("Basics"),
-		WidgetItem("Cupertino(iOS-style-widgets)"),
-		WidgetItem("Input"),
-		WidgetItem("Interaction Models"),
-		WidgetItem("Layout"),
-		WidgetItem("Material Components"),
-		WidgetItem("Painting and effects"),
-		WidgetItem("Scrolling"),
-		WidgetItem("Styling"),
-		WidgetItem("Text")
+		WidgetItem("Accessibility", AccessibilityPages()),
+		WidgetItem("Animation and Motion", AnimMotionPages()),
+		WidgetItem("Assets, Images, and Icons", AssetsImagesIconsPages()),
+		WidgetItem("Async", AsyncPages()),
+		WidgetItem("Basics", BasicsPages()),
+		WidgetItem("Cupertino(iOS-style-widgets)", CupertinoPages()),
+		WidgetItem("Input", InputPages()),
+		WidgetItem("Interaction Models", InteractionModelsPages()),
+		WidgetItem("Layout", LayoutPages()),
+		WidgetItem("Material Components", MaterialComponentsPages()),
+		WidgetItem("Painting and effects", PaintingEffectsPages()),
+		WidgetItem("Scrolling", ScrollingPages()),
+		WidgetItem("Styling", StylingPages()),
+		WidgetItem("Text", TextPages())
 	];
 
 	@override
@@ -39,7 +52,7 @@ class WidgetCatalog extends StatelessWidget {
 						onTap: () {
 							print(widgetList[index].title);
 							Navigator.push(context, MaterialPageRoute(builder: (context) =>
-									MyStatelessWidget()));
+									widgetList[index].widget));
 						},
 					),
 					color: Colors.teal[200],

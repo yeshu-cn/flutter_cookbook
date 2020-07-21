@@ -1,5 +1,8 @@
+import 'package:flutter/material.dart';
+
 class WidgetItem {
 	String title;
+	Widget widget;
 
-	WidgetItem(this.title);
+	WidgetItem(this.title, this.widget);
 }
