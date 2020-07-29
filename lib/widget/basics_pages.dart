@@ -1,5 +1,7 @@
 import 'package:cookbook/model/widget_item.dart';
 import 'package:cookbook/widget/basics/container_page.dart';
+import 'package:cookbook/widget/basics/placeholder_page.dart';
+import 'package:cookbook/widget/basics/raised_button_page.dart';
 import 'package:flutter/material.dart';
 
 import 'basics/appbar_page.dart';
@@ -15,8 +17,8 @@ class BasicsPages extends StatelessWidget {
     WidgetItem("FlutterLogo", AppbarPage()),
     WidgetItem("Icon", IconPage()),
     WidgetItem("Image", ImagePage()),
-    WidgetItem("Placeholder", AppbarPage()),
-    WidgetItem("RaisedButton", AppbarPage()),
+    WidgetItem("Placeholder", PlaceHolderPage()),
+    WidgetItem("RaisedButton", RaisedButtonPage()),
     WidgetItem("Row", AppbarPage()),
     WidgetItem("Scaffold", AppbarPage()),
     WidgetItem("Text", AppbarPage())

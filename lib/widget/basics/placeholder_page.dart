@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 
-class ImagePage extends StatelessWidget {
+class PlaceHolderPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -19,13 +19,10 @@ class ImagePage extends StatelessWidget {
               )
             ],
           ),
-          title: Text('Image'),
+          title: Text('Placeholder'),
         ),
         body: TabBarView(
-          children: [
-            _createDemoTab(),
-            _createCodeTab()
-          ],
+          children: [_createDemoTab(), _createCodeTab()],
         ),
       ),
     );
@@ -33,19 +30,15 @@ class ImagePage extends StatelessWidget {
 
   Widget _createDemoTab() {
     return Center(
-      child: Column(
-        children: const <Widget>[
-          Image(
-            image: NetworkImage('https://flutter.github.io/assets-for-api-docs/assets/widgets/owl.jpg'),
-          )
-        ],
-      ),
-    );
+        child: Placeholder(
+      color: Colors.blue,
+      strokeWidth: 4.0,
+    ));
   }
 
   Widget _createCodeTab() {
     return FutureBuilder(
-        future: rootBundle.loadString("assets/image.md"),
+        future: rootBundle.loadString("assets/placeholder.md"),
         builder: (BuildContext context, AsyncSnapshot<String> snapshot) {
           if (snapshot.hasData) {
             return Markdown(

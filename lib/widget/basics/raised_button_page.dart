@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 
-class ImagePage extends StatelessWidget {
+class RaisedButtonPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -19,7 +19,7 @@ class ImagePage extends StatelessWidget {
               )
             ],
           ),
-          title: Text('Image'),
+          title: Text('RaisedButton'),
         ),
         body: TabBarView(
           children: [
@@ -34,10 +34,37 @@ class ImagePage extends StatelessWidget {
   Widget _createDemoTab() {
     return Center(
       child: Column(
-        children: const <Widget>[
-          Image(
-            image: NetworkImage('https://flutter.github.io/assets-for-api-docs/assets/widgets/owl.jpg'),
-          )
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          const RaisedButton(
+            onPressed: null,
+            child: Text('Disabled Button', style: TextStyle(fontSize: 20)),
+          ),
+          const SizedBox(height: 30),
+          RaisedButton(
+            onPressed: () {},
+            child: const Text('Enabled Button', style: TextStyle(fontSize: 20)),
+          ),
+          const SizedBox(height: 30),
+          RaisedButton(
+            onPressed: () {},
+            textColor: Colors.white,
+            padding: const EdgeInsets.all(0.0),
+            child: Container(
+              decoration: const BoxDecoration(
+                gradient: LinearGradient(
+                  colors: <Color>[
+                    Color(0xFF0D47A1),
+                    Color(0xFF1976D2),
+                    Color(0xFF42A5F5),
+                  ],
+                ),
+              ),
+              padding: const EdgeInsets.all(10.0),
+              child:
+              const Text('Gradient Button', style: TextStyle(fontSize: 20)),
+            ),
+          ),
         ],
       ),
     );
@@ -45,7 +72,7 @@ class ImagePage extends StatelessWidget {
 
   Widget _createCodeTab() {
     return FutureBuilder(
-        future: rootBundle.loadString("assets/image.md"),
+        future: rootBundle.loadString("assets/raised_button.md"),
         builder: (BuildContext context, AsyncSnapshot<String> snapshot) {
           if (snapshot.hasData) {
             return Markdown(

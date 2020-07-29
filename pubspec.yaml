@@ -79,3 +79,6 @@ flutter:
   assets:
     - assets/hello.md
     - assets/icon.md
+    - assets/image.md
+    - assets/placeholder.md
+    - assets/raised_button.md
