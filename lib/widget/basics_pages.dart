@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 
 import 'basics/appbar_page.dart';
 import 'basics/column_page.dart';
+import 'basics/icon_page.dart';
+import 'basics/image_page.dart';
 
 class BasicsPages extends StatelessWidget {
   final widgetList = [
@@ -11,8 +13,8 @@ class BasicsPages extends StatelessWidget {
     WidgetItem("Column", ColumnPage()),
     WidgetItem("Container", ContainerPage()),
     WidgetItem("FlutterLogo", AppbarPage()),
-    WidgetItem("Icon", AppbarPage()),
-    WidgetItem("Image", AppbarPage()),
+    WidgetItem("Icon", IconPage()),
+    WidgetItem("Image", ImagePage()),
     WidgetItem("Placeholder", AppbarPage()),
     WidgetItem("RaisedButton", AppbarPage()),
     WidgetItem("Row", AppbarPage()),
