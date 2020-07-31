@@ -82,3 +82,6 @@ flutter:
     - assets/image.md
     - assets/placeholder.md
     - assets/raised_button.md
+    - assets/row.md
+    - assets/scaffold.md
+    - assets/text.md
