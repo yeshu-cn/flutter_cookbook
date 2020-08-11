@@ -4,25 +4,23 @@ import 'package:flutter/material.dart';
 class ColumnPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: DefaultTabController(
-        length: 2,
-        child: Scaffold(
-          appBar: AppBar(
-            bottom: TabBar(
-              tabs: [
-                Tab(text: 'demo1',),
-                Tab(text: 'demo2',)
-              ],
-            ),
-            title: Text('Column'),
-          ),
-          body: TabBarView(
-            children: [
-              _createTabLeft(),
-              _createTabRight(context)
+    return DefaultTabController(
+      length: 2,
+      child: Scaffold(
+        appBar: AppBar(
+          bottom: TabBar(
+            tabs: [
+              Tab(text: 'demo1',),
+              Tab(text: 'demo2',)
             ],
           ),
+          title: Text('Column'),
+        ),
+        body: TabBarView(
+          children: [
+            _createTabLeft(),
+            _createTabRight(context)
+          ],
         ),
       ),
     );

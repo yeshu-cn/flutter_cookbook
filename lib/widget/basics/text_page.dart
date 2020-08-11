@@ -6,25 +6,23 @@ import 'package:flutter_markdown/flutter_markdown.dart';
 class TextPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: DefaultTabController(
-        length: 2,
-        child: Scaffold(
-          appBar: AppBar(
-            bottom: TabBar(
-              tabs: [
-                Tab(text: 'demo',),
-                Tab(text: 'code',)
-              ],
-            ),
-            title: Text('Text'),
-          ),
-          body: TabBarView(
-            children: [
-              _createDemoTab(),
-              _createCodeTab()
+    return DefaultTabController(
+      length: 2,
+      child: Scaffold(
+        appBar: AppBar(
+          bottom: TabBar(
+            tabs: [
+              Tab(text: 'demo',),
+              Tab(text: 'code',)
             ],
           ),
+          title: Text('Text'),
+        ),
+        body: TabBarView(
+          children: [
+            _createDemoTab(),
+            _createCodeTab()
+          ],
         ),
       ),
     );
